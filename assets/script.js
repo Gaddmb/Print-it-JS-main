@@ -10,7 +10,7 @@ arrowRight.addEventListener("click", function () {
   console.log("click !");
 });
 
-// variable de type tableau on les reconnait grace a crochet
+// variable de type tableau on les reconnait grace a crochet la variable 
 const slides = [
   {
     image: "slide1.jpg",
@@ -31,6 +31,7 @@ const slides = [
   },
 ];
 
+// je crée une variable qui change 
 let numero = 0;
 // une fonction est un blogue de code qui a un but precis comme ci-desous
 // sens et une variable qui va prendre 1 ou -1 lorsque je clic sur les fleches
@@ -42,7 +43,16 @@ function ChangeSlide(sens) {
   if (numero < 0) {
     numero = slides.length - 1;
   }
+  // je dis a mon site web de chercher dans le DOM la div .banner-img + dans ma variable slides les images 
   document.querySelector(".banner-img").src =
     "./assets/images/slideshow/" + slides[numero].image;
   document.getElementById("tagLine").innerHTML = slides[numero].tagLine;
+  
+  // PARTI POINT CARROUSEL
+  document.querySelectorAll('.dot_selected').forEach((element) => {
+    element.classList.remove('dot_selected');   
+  });
+
+  let numero_dot=(numero+1);
+  document.querySelector('.dot:nth-of-type('+numero_dot+')').classList.add('dot_selected'); 
 }
