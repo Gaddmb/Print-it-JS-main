@@ -49,10 +49,9 @@ function ChangeSlide(sens) {
   document.getElementById("tagLine").innerHTML = slides[numero].tagLine;
   
   // PARTI POINT CARROUSEL
-  document.querySelectorAll('.dot_selected').forEach((element) => {
-    element.classList.remove('dot_selected');   
-  });
-
-  let numero_dot=(numero+1);
+  document.querySelector('.dot_selected').classList.remove('dot_selected');  
+  let numero_dot = (numero+1);
+ 
   document.querySelector('.dot:nth-of-type('+numero_dot+')').classList.add('dot_selected'); 
-}
+  console.log(numero);
+} 
