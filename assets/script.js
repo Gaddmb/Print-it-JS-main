@@ -1,14 +1,19 @@
 // Click EVENT
 
+
+
 const arrowLeft = document.querySelector(".arrow_left");
-arrowLeft.addEventListener("click", function () {
+arrowLeft.addEventListener("click", function () { 
+  ChangeSlide(-1)
   console.log("click !");
 });
 
 const arrowRight = document.querySelector(".arrow_right");
 arrowRight.addEventListener("click", function () {
+  ChangeSlide(1)
   console.log("click !");
 });
+
 
 // variable de type tableau on les reconnait grace a crochet la variable 
 const slides = [
@@ -51,7 +56,7 @@ function ChangeSlide(sens) {
   // PARTI POINT CARROUSEL
   document.querySelector('.dot_selected').classList.remove('dot_selected');  
   let numero_dot = (numero+1);
- 
+  
   document.querySelector('.dot:nth-of-type('+numero_dot+')').classList.add('dot_selected'); 
   console.log(numero);
 } 
